@@ -20,7 +20,7 @@
 
 class php::globals (
 
-  Optional[Pattern[/^(rh-)?(php)?[57](\.)?([0-9])?/]] $php_version = undef,
+  Optional[Pattern[/^(rh-)?(php)?[57](\.)?[0-9x]/]] $php_version = undef,
   Optional[Stdlib::Absolutepath] $config_root   = undef,
   Optional[Stdlib::Absolutepath] $fpm_pid_file  = undef,
   $rhscl_mode   = undef,
@@ -33,7 +33,7 @@ class php::globals (
     'Ubuntu' => $facts['os']['release']['major'] ? {
       '20.04' => '7.4',
       '16.04' => '7.0',
-      '14.04' => '5',
+      '14.04' => '5.x',
       default => '7.2',
     },
     default => '5.x',
